@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | The Kasi Collective</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-strip">NOW BOOKING · <span>Walk-ins Welcome</span> · GameCity Mall, Gaborone</div>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">THE KASI <span>COLLECTIVE</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="booking.html" class="nav-cta">Book Now</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>BOOK YOUR <span class="accent">APPOINTMENT</span></h1>
+        <p>Select your service, artist, and preferred time. We'll confirm within 2 hours via WhatsApp.</p>
+    </section>
+
+    <main class="form-section">
+        <form onsubmit="submitBooking(event)">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="booking-name">Full Name</label>
+                    <input type="text" id="booking-name" required placeholder="e.g. Kabo Mothibi">
+                </div>
+                <div class="form-group">
+                    <label for="booking-phone">Phone / WhatsApp</label>
+                    <input type="tel" id="booking-phone" required placeholder="+267 ...">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="booking-service">Service</label>
+                    <select id="booking-service" required>
+                        <option value="">Select a service...</option>
+                        <optgroup label="Barbering">
+                            <option>Classic Haircut — P80</option>
+                            <option>Skin Fade — P120</option>
+                            <option>Beard Trim & Shape — P60</option>
+                            <option>Hot Towel Shave — P100</option>
+                        </optgroup>
+                        <optgroup label="Nail Tech">
+                            <option>Classic Manicure — P150</option>
+                            <option>Gel Manicure — P220</option>
+                            <option>Acrylic Extensions — P350</option>
+                            <option>Luxury Pedicure — P280</option>
+                        </optgroup>
+                        <optgroup label="Hairstyling">
+                            <option>Box Braids — P350</option>
+                            <option>Knotless Braids — P500</option>
+                            <option>Silk Press — P250</option>
+                            <option>Sew-In Weave — P450</option>
+                            <option>Hair Colour — P600</option>
+                        </optgroup>
+                        <optgroup label="Tattoos">
+                            <option>Small Tattoo — P400</option>
+                            <option>Medium Tattoo — P800</option>
+                            <option>Large Tattoo — P1000</option>
+                            <option>Cover-Up — P900</option>
+                        </optgroup>
+                        <optgroup label="Piercing & Makeup">
+                            <option>Ear Piercing — P120</option>
+                            <option>Nose Piercing — P180</option>
+                            <option>Everyday Makeup — P350</option>
+                            <option>Bridal Makeup — P900</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="booking-artist">Preferred Artist (Optional)</label>
+                    <select id="booking-artist">
+                        <option>Any Available</option>
+                        <option>Kagiso Molefe — Master Barber</option>
+                        <option>Neo Kgosi — Nail Tech</option>
+                        <option>Tshepo Ramotswe — Hairstylist</option>
+                        <option>Amantle Sekgoma — Tattoo Artist</option>
+                        <option>Lesego Bogatsu — Makeup Artist</option>
+                        <option>Boitumelo Phiri — Piercing</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="booking-date">Preferred Date</label>
+                    <input type="date" id="booking-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="booking-time">Preferred Time</label>
+                    <input type="time" id="booking-time" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="booking-notes">Additional Notes</label>
+                <textarea id="booking-notes" rows="4" placeholder="Reference photos, allergies, special requests..."></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%; justify-content: center;">Request Appointment <i class="fas fa-arrow-right"></i></button>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-light); font-size: 0.85rem;">We'll confirm your slot within 2 hours via WhatsApp.</p>
+        </form>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>THE KASI <span>COLLECTIVE</span></h3>
+                    <p>Where Botswana's boldest style comes to life. Barbers, nail techs, hairstylists, tattoo artists — all under one roof.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Barbering</a></li>
+                        <li><a href="services.html">Nail Tech</a></li>
+                        <li><a href="services.html">Hairstyling</a></li>
+                        <li><a href="services.html">Tattoos</a></li>
+                        <li><a href="services.html">Piercing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Visit</h4>
+                    <ul>
+                        <li>GameCity Mall</li>
+                        <li>Gaborone, Botswana</li>
+                        <li>+267 7123 4567</li>
+                        <li>hello@kasicollective.co.bw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hours</h4>
+                    <ul>
+                        <li>Mon–Fri: 9AM – 8PM</li>
+                        <li>Saturday: 8AM – 9PM</li>
+                        <li>Sunday: 10AM – 4PM</li>
+                        <li>Walk-ins Welcome</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 The Kasi Collective. All rights reserved.</span>
+                <span>Made with 🇧🇼 in Gaborone</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
