@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | The Kasi Collective</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-strip">NOW BOOKING · <span>Walk-ins Welcome</span> · GameCity Mall, Gaborone</div>
+    <header>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">THE KASI <span>COLLECTIVE</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="booking.html" class="nav-cta">Book Now</a>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <h1>GET IN <span class="accent">TOUCH</span></h1>
+        <p>Visit us, call us, or send a message. We're always ready to serve you.</p>
+    </section>
+
+    <main class="contact-split">
+        <div class="contact-info-panel">
+            <h2 style="font-size: 3rem; margin-bottom: 40px;">FIND US</h2>
+            <div class="contact-detail-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>Location</h4>
+                    <p>GameCity Mall, Gaborone<br>Near Botho University</p>
+                </div>
+            </div>
+            <div class="contact-detail-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                    <h4>Phone</h4>
+                    <p>+267 7123 4567</p>
+                </div>
+            </div>
+            <div class="contact-detail-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Email</h4>
+                    <p>hello@kasicollective.co.bw</p>
+                </div>
+            </div>
+            <div class="contact-detail-item">
+                <i class="fas fa-clock"></i>
+                <div>
+                    <h4>Hours</h4>
+                    <p>Mon–Fri: 9AM – 8PM<br>Sat: 8AM – 9PM | Sun: 10AM – 4PM</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-panel">
+            <h2 style="font-size: 3rem; color: var(--off-white); margin-bottom: 40px;">SEND A MESSAGE</h2>
+            <form onsubmit="submitContact(event)">
+                <div class="form-group">
+                    <label for="contact-name">Name</label>
+                    <input type="text" id="contact-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Message</label>
+                    <textarea id="contact-message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn" style="width: 100%; justify-content: center;">Send Message <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <h3>THE KASI <span>COLLECTIVE</span></h3>
+                    <p>Where Botswana's boldest style comes to life. Barbers, nail techs, hairstylists, tattoo artists — all under one roof.</p>
+                    <div class="footer-socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Barbering</a></li>
+                        <li><a href="services.html">Nail Tech</a></li>
+                        <li><a href="services.html">Hairstyling</a></li>
+                        <li><a href="services.html">Tattoos</a></li>
+                        <li><a href="services.html">Piercing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Visit</h4>
+                    <ul>
+                        <li>GameCity Mall</li>
+                        <li>Gaborone, Botswana</li>
+                        <li>+267 7123 4567</li>
+                        <li>hello@kasicollective.co.bw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Hours</h4>
+                    <ul>
+                        <li>Mon–Fri: 9AM – 8PM</li>
+                        <li>Saturday: 8AM – 9PM</li>
+                        <li>Sunday: 10AM – 4PM</li>
+                        <li>Walk-ins Welcome</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 The Kasi Collective. All rights reserved.</span>
+                <span>Made with 🇧🇼 in Gaborone</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
