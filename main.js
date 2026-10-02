@@ -140,4 +140,162 @@ const team = [
    RENDER SERVICES STRIP (Home)
 ============================================ */
 function renderServicesStrip() {
-    const strip = document.getElementById('services-sc
+    const strip = document.getElementById('services-scroll');
+    if (!strip) return;
+
+    services.forEach(s => {
+        strip.innerHTML += `
+            <div class="service-card" onclick="window.location.href='services.html'">
+                <div class="service-num">${s.num}</div>
+                <h3>${s.name}</h3>
+                <p>${s.desc}</p>
+                <div class="service-from">${s.from}</div>
+            </div>
+        `;
+    });
+}
+
+/* ============================================
+   RENDER FEATURED TEAM (Home)
+============================================ */
+function renderFeaturedTeam() {
+    const grid = document.getElementById('featured-team');
+    if (!grid) return;
+
+    team.slice(0, 3).forEach(m => {
+        grid.innerHTML += `
+            <div class="team-member">
+                <div class="team-member-img" style="background-image: url('${m.img}');">
+                    <div class="team-role-tag">${m.role}</div>
+                </div>
+                <div class="team-member-info">
+                    <h3>${m.name}</h3>
+                    <p>${m.bio}</p>
+                    <div class="team-socials">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+/* ============================================
+   RENDER FULL TEAM (Team Page)
+============================================ */
+function renderFullTeam() {
+    const grid = document.getElementById('all-team');
+    if (!grid) return;
+
+    team.forEach(m => {
+        grid.innerHTML += `
+            <div class="team-member">
+                <div class="team-member-img" style="background-image: url('${m.img}');">
+                    <div class="team-role-tag">${m.role}</div>
+                </div>
+                <div class="team-member-info">
+                    <h3>${m.name}</h3>
+                    <p>${m.bio}</p>
+                    <div class="team-socials">
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-tiktok"></i>
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+}
+
+/* ============================================
+   RENDER SERVICES LIST (Services Page)
+============================================ */
+function renderServicesList() {
+    const container = document.getElementById('services-list');
+    if (!container) return;
+
+    services.forEach(s => {
+        const itemsHTML = s.items.map(item => `
+            <div class="service-item">
+                <div class="service-item-info">
+                    <h4>${item.name}</h4>
+                    <p>${item.desc}</p>
+                </div>
+                <div class="service-item-price">${item.price === 0 ? 'FREE' : 'P' + item.price}</div>
+            </div>
+        `).join('');
+
+        container.innerHTML += `
+            <div class="service-category">
+                <div class="service-category-header">
+                    <i class="fas ${s.icon}"></i>
+                    <h2>${s.name}</h2>
+                </div>
+                ${itemsHTML}
+            </div>
+        `;
+    });
+}
+
+/* ============================================
+   MASONRY GALLERY
+============================================ */
+function renderGallery() {
+    const masonry = document.getElementById('masonry');
+    if (!masonry) return;
+
+    const images = [
+        "https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1560869713-7d0a29430803?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1571902943202-507ec2618e8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1610992015732-2449b76344bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1605497788044-5a32c7078486?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+        "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    ];
+
+    images.forEach(src => {
+        masonry.innerHTML += `
+            <div class="masonry-item">
+                <img src="${src}" alt="Salon work">
+            </div>
+        `;
+    });
+}
+
+/* ============================================
+   BOOKING FORM
+============================================ */
+function submitBooking(e) {
+    e.preventDefault();
+    const name = document.getElementById('booking-name')?.value || 'Guest';
+    const service = document.getElementById('booking-service')?.value || 'your chosen service';
+    alert(`Thank you, ${name}! Your appointment request for ${service} has been received. We'll confirm via WhatsApp within 2 hours.`);
+    e.target.reset();
+}
+
+function submitContact(e) {
+    e.preventDefault();
+    alert("Thank you for reaching out! We'll get back to you within 24 hours.");
+    e.target.reset();
+}
+
+/* ============================================
+   INITIALIZATION
+============================================ */
+document.addEventListener('DOMContentLoaded', () => {
+    renderServicesStrip();
+    renderFeaturedTeam();
+    renderFullTeam();
+    renderServicesList();
+    renderGallery();
+
+    // Set minimum date on booking inputs
+    const today = new Date().toISOString().split('T')[0];
+    document.querySelectorAll('input[type="date"]').forEach(input => {
+        input.min = today;
+    });
+});
